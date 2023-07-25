@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="font-awesome-6-pro/css/all.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="w3.css">
+    <link rel="icon" type="image/png" sizes="512x512" href="favicon_io/android-chrome-512x512.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="favicon_io/android-chrome-192x192.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="favicon_io/site.webmanifest">
+    <title>Home</title>
+</head>
+<body class="">
+    <div class="container-fluid">
+        <header class="sticky-top">
+            <div class="navbar bg-body navbar-expand">
+                <div class="navbar-brand">It's Your Library <i class="fas fa-books"></i></div>
+                <div class="flex-fill"></div>
+                <div id="searchbar" class="input-group">
+                    <input type="text" class="rounded-start-4 rounded-end-0 form-control" placeholder="Search Books/AuthorName/Catagories" id="searchedItem">
+                    <button id="searchBtn" class="rounded-start-0 rounded-end-4  text-decoration-none input-group-text"><i class="fas fa-search"></i></button>
+                </div>
+                <div class="flex-fill"></div>
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
+                    <li class="nav-item">
+                        <div class="dropdown">
+                            <a class="text-decoration-none nav-link dropdown-toggle" style="cursor: pointer;" data-bs-toggle="dropdown">Books</a>
+                            <div class="dropdown-menu">
+                                <a href="#booksOfTheDay" class="dropdown-item">BooksOfTheDay</a>
+                                <a href="#Nobels" class="dropdown-item">Nobels</a>
+                                <a href="#Poems" class="dropdown-item">Poems</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <div class="dropdown">
+                            <a class="text-decoration-none nav-link dropdown-toggle" style="cursor: pointer;" data-bs-toggle="dropdown">Author</a>
+                            <div class="dropdown-menu">
+                                <a  class="dropdown-item">Local</a>
+                                <a  class="dropdown-item">International</a>
+                                <a  class="dropdown-item">Nobel Writers</a>
+                                <a  class="dropdown-item">Poets</a>
+                            </div>
+                        </div>
+                        <li>
+                            <li class="nav-item">
+                                <div class="dropdown">
+                                    <a class="text-decoration-none nav-link dropdown-toggle" style="cursor: pointer;" data-bs-toggle="dropdown">Catagories</a>
+                                    <div class="dropdown-menu">
+                                        <a  class="dropdown-item">Nobels</a>
+                                        <a  class="dropdown-item">Technology</a>
+                                        <a  class="dropdown-item">Translated Books</a>
+                                        <a  class="dropdown-item">Poems</a>
+                                        <a  class="dropdown-item">Geography</a>
+                                        <a  class="dropdown-item">General</a>
+                                    </div>
+                                </div>
+                                <li>
+                    <li class="nav-item"><a style="cursor:pointer;" class="nav-link" data-bs-toggle="offcanvas" data-bs-target="#contact">Contacts</a></li>
+                    <li class="nav-item"><a id="themeBtn" class="nav-link btn"><i class="fas fa-circle-half-stroke"></i></a></li>
+                </ul>
+            </div>
+        </header>
+        <section class=" mt-2" id="home">
+            <div class="card   " id="booksOfTheDay">
+                <div class="card-header">Books Of The Day</div>
+                <div class="card-body row d-flex flex-row overflow-auto flex-wrap " style="width:100%; height:450px;">
+                <div class="col-3 m-1 col-sm-12 card " id="" style="width:300px; height:400px;">
+                    <div class="card-body">
+                        <div class="card-img-top"><img src="" class="img-fluid" style="width:100%;" alt=""></div>
+                        <div class="card-text"><h3 class="info "></h3></div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="" class="btn btn-primary">ShowMore</a>
+                    </div>
+                </div>
+                <div class="col-3 m-1 col-sm-12 card " id="" style="width:300px; height:400px;">
+                    <div class="card-body">
+                        <div class="card-img-top"><img src="" class="img-fluid" style="width:100%;" alt=""></div>
+                        <div class="card-text"><h3 class="info "></h3></div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="" class="btn btn-primary">ShowMore</a>
+                    </div>
+                </div>
+                <div class="col-3 m-1 col-sm-12 card " id="" style="width:300px; height:400px;">
+                    <div class="card-body">
+                        <div class="card-img-top"><img src="" class="img-fluid" style="width:100%;" alt=""></div>
+                        <div class="card-text"><h3 class="info "></h3></div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="" class="btn btn-primary">ShowMore</a>
+                    </div>
+                </div>
+                <div class="col-3 m-1 col-sm-12 card " id="" style="width:300px; height:400px;">
+                    <div class="card-body">
+                        <div class="card-img-top"><img src="" class="img-fluid" style="width:100%;" alt=""></div>
+                        <div class="card-text"><h3 class="info "></h3></div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="" class="btn btn-primary">ShowMore</a>
+                    </div>
+                </div>
+                <div class="col-3 m-1 col-sm-12 card " id="" style="width:300px; height:400px;">
+                    <div class="card-body">
+                        <div class="card-img-top"><img src="" class="img-fluid" style="width:100%;" alt=""></div>
+                        <div class="card-text"><h3 class="info "></h3></div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="" class="btn btn-primary">ShowMore</a>
+                    </div>
+                </div>
+                <div class="col-3 m-1 col-sm-12 card " id="" style="width:300px; height:400px;">
+                    <div class="card-body">
+                        <div class="card-img-top"><img src="" class="img-fluid" style="width:100%;" alt=""></div>
+                        <div class="card-text"><h3 class="info "></h3></div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="" class="btn btn-primary">ShowMore</a>
+                    </div>
+                </div>
+                <div class="col-3 m-1 col-sm-12 card " id="" style="width:300px; height:400px;">
+                    <div class="card-body">
+                        <div class="card-img-top"><img src="" class="img-fluid" style="width:100%;" alt=""></div>
+                        <div class="card-text"><h3 class="info "></h3></div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="" class="btn btn-primary">ShowMore</a>
+                    </div>
+                </div>
+                </div>
+                <div class="card-footer">
+                    <div class="text-end">
+                        <a href="#" class="btn btn-info">See More...</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card mt-3" id="Nobels">
+                <div class="card-header">Nobels</div>
+                <div class="card-body row d-flex flex-ro overflow-auto flex-wrap" style="width:100%; height:450px;">
+                <div class="col-3 col-lg-12 card m-1" id="" style="width:300px; height:400px;">
+                    <div class="card-body">
+                        <div class="card-img-top"><img src="" class="img-fluid" style="width:100%;" alt=""></div>
+                        <div class="card-text"><h3 class="info "></h3></div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="" class="btn btn-primary">ShowMore</a>
+                    </div>
+                </div>
+                <div class="col-3 col-lg-12 card m-1" id="" style="width:300px; height:400px;">
+                    <div class="card-body">
+                        <div class="card-img-top"><img src="" class="img-fluid" style="width:100%;" alt=""></div>
+                        <div class="card-text"><h3 class="info "></h3></div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="" class="btn btn-primary">ShowMore</a>
+                    </div>
+                </div>
+                <div class="col-3 col-lg-12 card m-1" id="" style="width:300px; height:400px;">
+                    <div class="card-body">
+                        <div class="card-img-top"><img src="" class="img-fluid" style="width:100%;" alt=""></div>
+                        <div class="card-text"><h3 class="info "></h3></div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="" class="btn btn-primary">ShowMore</a>
+                    </div>
+                </div>
+                <div class="col-3 col-lg-12 card m-1" id="" style="width:300px; height:400px;">
+                    <div class="card-body">
+                        <div class="card-img-top"><img src="" class="img-fluid" style="width:100%;" alt=""></div>
+                        <div class="card-text"><h3 class="info "></h3></div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="" class="btn btn-primary">ShowMore</a>
+                    </div>
+                </div>
+                <div class="col-3 col-lg-12 card m-1" id="" style="width:300px; height:400px;">
+                    <div class="card-body">
+                        <div class="card-img-top"><img src="" class="img-fluid" style="width:100%;" alt=""></div>
+                        <div class="card-text"><h3 class="info "></h3></div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="" class="btn btn-primary">ShowMore</a>
+                    </div>
+                </div>
+                <div class="col-3 col-lg-12 card m-1" id="" style="width:300px; height:400px;">
+                    <div class="card-body">
+                        <div class="card-img-top"><img src="" class="img-fluid" style="width:100%;" alt=""></div>
+                        <div class="card-text"><h3 class="info "></h3></div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="" class="btn btn-primary">ShowMore</a>
+                    </div>
+                </div>
+                <div class="col-3 col-lg-12 card m-1" id="" style="width:300px; height:400px;">
+                    <div class="card-body">
+                        <div class="card-img-top"><img src="" class="img-fluid" style="width:100%;" alt=""></div>
+                        <div class="card-text"><h3 class="info "></h3></div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="" class="btn btn-primary">ShowMore</a>
+                    </div>
+                </div>
+                </div>
+                <div class="card-footer">
+                    <div class="text-end">
+                        <a href="#" class="btn btn-info">See More...</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card  mt-3" id="Poems">
+                <div class="card-header">Poems</div>
+                <div class="card-body row d-flex flex-ro overflow-auto flex-wrap" style="width:100%; height:450px;">
+                <div class="col-3 col-lg-12 card m-1" id="" style="width:300px; height:400px;">
+                    <div class="card-body">
+                        <div class="card-img-top"><img src="" class="img-fluid" style="width:100%;" alt=""></div>
+                        <div class="card-text"><h3 class="info "></h3></div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="" class="btn btn-primary">ShowMore</a>
+                    </div>
+                </div>
+                <div class="col-3 col-lg-12 card m-1" id="" style="width:300px; height:400px;">
+                    <div class="card-body">
+                        <div class="card-img-top"><img src="" class="img-fluid" style="width:100%;" alt=""></div>
+                        <div class="card-text"><h3 class="info "></h3></div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="" class="btn btn-primary">ShowMore</a>
+                    </div>
+                </div>
+                <div class="col-3 col-lg-12 card m-1" id="" style="width:300px; height:400px;">
+                    <div class="card-body">
+                        <div class="card-img-top"><img src="" class="img-fluid" style="width:100%;" alt=""></div>
+                        <div class="card-text"><h3 class="info "></h3></div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="" class="btn btn-primary">ShowMore</a>
+                    </div>
+                </div>
+                <div class="col-3 col-lg-12 card m-1" id="" style="width:300px; height:400px;">
+                    <div class="card-body">
+                        <div class="card-img-top"><img src="" class="img-fluid" style="width:100%;" alt=""></div>
+                        <div class="card-text"><h3 class="info "></h3></div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="" class="btn btn-primary">ShowMore</a>
+                    </div>
+                </div>
+                <div class="col-3 col-lg-12 card m-1" id="" style="width:300px; height:400px;">
+                    <div class="card-body">
+                        <div class="card-img-top"><img src="" class="img-fluid" style="width:100%;" alt=""></div>
+                        <div class="card-text"><h3 class="info "></h3></div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="" class="btn btn-primary">ShowMore</a>
+                    </div>
+                </div>
+                <div class="col-3 col-lg-12 card m-1" id="" style="width:300px; height:400px;">
+                    <div class="card-body">
+                        <div class="card-img-top"><img src="" class="img-fluid" style="width:100%;" alt=""></div>
+                        <div class="card-text"><h3 class="info "></h3></div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="" class="btn btn-primary">ShowMore</a>
+                    </div>
+                </div>
+                <div class="col-3 col-lg-12 card m-1" id="" style="width:300px; height:400px;">
+                    <div class="card-body">
+                        <div class="card-img-top"><img src="" class="img-fluid" style="width:100%;" alt=""></div>
+                        <div class="card-text"><h3 class="info "></h3></div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="" class="btn btn-primary">ShowMore</a>
+                    </div>
+                </div>
+                </div>
+                <div class="card-footer">
+                    <div class="text-end">
+                        <a href="#" class="btn btn-info">See More...</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div id="contact" class="offcanvas offcanvas-start">
+            <div class="offcanvas-header">
+                <h3>Contacts</h3>
+                <a  class="btn btn-close" data-bs-dismiss="offcanvas"></a>
+            </div>
+            <div class="offcanvas-body">
+                <div id="contactForm">
+                    <div class="mt-2 mb-2 form-floating">
+                        <input type="text" placeholder="Enter Your Name" name="name" class="form-control" id="name">
+                        <label for="name" >Enter Your Name</label>
+                    </div>
+                    <div class="mt-2 mb-2 form-floating ">
+                        <input type="email" placeholder="Enter Your Email" name="email" class="form-control" id="email">
+                        <label for="email" >Enter Your Email</label>
+                    </div>
+                    <div class="mt-2 mb-2 ">
+                        <label for="messages" class="form-label">Enter Message</label>
+                        <textarea name="message" placeholder="" class="form-control" id="messages" rows="5" ></textarea>
+                    </div>
+                    <button type="button" class="btn mt-2 mb-2 btn-primary">Send <i class="fas fa-paper-plane-top"></i></button>
+                </div>
+            </div>
+            <div class="offccanvas-bottom"></div>
+        </div>
+    </div>
+</body>
+<script src="api.js"></script>
+<script src="script.js"></script>
+<script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</html>
