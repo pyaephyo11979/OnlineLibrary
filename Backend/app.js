@@ -8,11 +8,15 @@ const mongoose = require ("mongoose");
 mongoose.connect("mongodb://localhost:27017/BookStore")
 .then(()=>console.log("Conncected"))
 
-app.use(file_upload())
+app.use(file_upload());
 
 let Author = require ("./Routes/Author_Route.js");
+let Category = require ("./Routes/Category_Route.js");
+let Tag = require ("./Routes/Tag_Route.js");
 
-app.use("/Author",Author)
+app.use("/Author",Author);
+app.use("/Category",Category);
+app.use("/Tag",Tag)
 
 app.use((err, req, res, next) => {
     console.error(err);
