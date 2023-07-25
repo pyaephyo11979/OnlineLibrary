@@ -62,7 +62,7 @@
                                     </div>
                                 </div>
                                 <li>
-                    <li class="nav-item"><a style="cursor:pointer;" class="nav-link" data-bs-toggle="offcanvas" data-bs-target="#contact">Contacts</a></li>
+                    <li class="nav-item"><a style="cursor:pointer;" class="nav-link" data-bs-toggle="offcanvas" data-bs-target="#login">Login/SignUp</a></li>
                     <li class="nav-item"><a id="themeBtn" class="nav-link btn"><i class="fas fa-circle-half-stroke"></i></a></li>
                 </ul>
             </div>
@@ -288,26 +288,23 @@
                 </div>
             </div>
         </section>
-        <div id="contact" class="offcanvas offcanvas-start">
+        <div id="login" class="offcanvas offcanvas-start">
             <div class="offcanvas-header">
                 <h3>Contacts</h3>
                 <a  class="btn btn-close" data-bs-dismiss="offcanvas"></a>
             </div>
             <div class="offcanvas-body">
-                <div id="contactForm">
+                <div id="login">
+                    <span class="d-block mt-2 mb-2 fs-3">Please Login To Continue</span>
                     <div class="mt-2 mb-2 form-floating">
-                        <input type="text" placeholder="Enter Your Name" name="name" class="form-control" id="name">
-                        <label for="name" >Enter Your Name</label>
+                        <input type="email" placeholder="Enter Your Name" name="email" class="form-control" id="rmail">
+                        <label for="email" >Enter Email</label>
                     </div>
                     <div class="mt-2 mb-2 form-floating ">
-                        <input type="email" placeholder="Enter Your Email" name="email" class="form-control" id="email">
-                        <label for="email" >Enter Your Email</label>
+                        <input type="password" placeholder="Enter Your psw" name="psw" class="form-control" id="psw">
+                        <label for="psw" >Enter Password</label>
                     </div>
-                    <div class="mt-2 mb-2 ">
-                        <label for="messages" class="form-label">Enter Message</label>
-                        <textarea name="message" placeholder="" class="form-control" id="messages" rows="5" ></textarea>
-                    </div>
-                    <button type="button" class="btn mt-2 mb-2 btn-primary">Send <i class="fas fa-paper-plane-top"></i></button>
+                    <button type="button"  class="btn mt-2 mb-2 btn-primary">Lgoin</button>
                 </div>
             </div>
             <div class="offccanvas-bottom"></div>
