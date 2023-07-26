@@ -10,7 +10,7 @@ books.forEach((val)=>{
     console.log(val)
     BooksOfTheDay.innerHTML+= `
     <div class="col-3 m-1 col-sm-12 card " id="" style="width:20%;">
-    <div class="card-body">
+    <div class="card-body book">
     <div class="card-text"><h3 class="info ">${val.volumeInfo.title}</h3></div>
         <div class="card-img-top"><img src="${val.volumeInfo.imageLinks.thumbnail}" class="img-fluid" style="width:100%;" alt=""></div>
     </div>
@@ -18,7 +18,7 @@ books.forEach((val)=>{
     `
     noBels.innerHTML+= `
     <div class="col-3 m-1 col-sm-12 card " id="" style="width:20%;">
-    <div class="card-body">
+    <div class="card-body book">
     <div class="card-text"><h3 class="info ">${val.volumeInfo.title}</h3></div>
         <div class="card-img-top"><img src="${val.volumeInfo.imageLinks.thumbnail}" class="img-fluid" style="width:100%;" alt=""></div>
     </div>
