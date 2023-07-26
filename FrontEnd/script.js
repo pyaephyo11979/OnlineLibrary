@@ -9,7 +9,7 @@ let noBels=document.getElementById('Nobels')
 books.forEach((val)=>{
     console.log(val)
     BooksOfTheDay.innerHTML+= `
-    <div class="col-3 m-1 col-sm-12 card " id="" style="width:20%;">
+    <div class="col-3 m-1 col-sm-12  w3-hover-border-amber w3-hover-black card " id="" style="width:20%;">
     <div class="card-body book">
     <div class="card-text"><h3 class="info ">${val.volumeInfo.title}</h3></div>
         <div class="card-img-top"><img src="${val.volumeInfo.imageLinks.thumbnail}" class="img-fluid" style="width:100%;" alt=""></div>
@@ -17,7 +17,7 @@ books.forEach((val)=>{
 </div>
     `
     noBels.innerHTML+= `
-    <div class="col-3 m-1 col-sm-12 card " id="" style="width:20%;">
+    <div class="col-3 m-1 col-sm-12  w3-hover-border-amber w3-hover-black card " id="" style="width:20%;">
     <div class="card-body book">
     <div class="card-text"><h3 class="info ">${val.volumeInfo.title}</h3></div>
         <div class="card-img-top"><img src="${val.volumeInfo.imageLinks.thumbnail}" class="img-fluid" style="width:100%;" alt=""></div>
