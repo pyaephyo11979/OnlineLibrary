@@ -290,12 +290,12 @@
         </section>
         <div id="login" class="offcanvas offcanvas-start">
             <div class="offcanvas-header">
-                <h3>Contacts</h3>
+                <h3>UserPanel</h3>
                 <a  class="btn btn-close" data-bs-dismiss="offcanvas"></a>
             </div>
             <div class="offcanvas-body">
-                <div id="login">
-                    <span class="d-block mt-2 mb-2 fs-3">Please Login To Continue</span>
+                <div id="page1">
+                    <span class=" mt-2 mb-2 fs-3">Please Login To Continue</span>
                     <div class="mt-2 mb-2 form-floating">
                         <input type="email" placeholder="Enter Your Name" name="email" class="form-control" id="rmail">
                         <label for="email" >Enter Email</label>
@@ -304,7 +304,29 @@
                         <input type="password" placeholder="Enter Your psw" name="psw" class="form-control" id="psw">
                         <label for="psw" >Enter Password</label>
                     </div>
-                    <button type="button"  class="btn mt-2 mb-2 btn-primary">Lgoin</button>
+                    <button type="button" id="loginbtn"  class="btn mt-2 mb-2 btn-primary">Lgoin</button>
+                    <a id="createAccBtn" data-bs-toggle="collapse" data-bs-target="#collapseExample" style="cursor: pointer;" class="mt-2 btn mb-2 d-block text-decoration-none fs-6">Doesn't have an account? Create Now</a>
+                </div>
+                <div id="page2" >
+                    <span class="d-block mt-2 mb-2 fs-3">Create Account</span>
+                    <div class="mt-2 mb-2 form-floating">
+                        <input id="name" name="name" placeholder="Enter Name" type="text" class="form-control">
+                        <label for="name">Enter Your Name</label>
+                    </div>
+                    <div class="mt-2 mb-2 form-floating">
+                        <input id="Email" name="email" placeholder="Enter Email" type="email" class="form-control">
+                        <label for="Email">Enter Email</label>
+                    </div>
+                    <div class="mt-2 mb-2 form-floating">
+                        <input id="pSw1" name="pSw2" placeholder="Enter Password" type="password" class="form-control">
+                        <label for="pSw">Enter Password</label>
+                    </div>
+                    <div class="mt-2 mb-2 form-floating">
+                        <input id="pSw2" name="pSw2" placeholder="Enter Password" type="password" class="form-control">
+                        <label for="pSw2">Enter Identical Password Again</label>
+                    </div>
+                    <button type="button" id="createBtn" class="btn mt-2 mb-2 btn-success">SignUp</button>
+                    <a type="button" style="cursor: pointer;" id="loginAccBtn" class="btn mt-2 mb-2 d-block text-decoration-none fs-6">Already have an account? Login Now</a>
                 </div>
             </div>
             <div class="offccanvas-bottom"></div>
