@@ -18,17 +18,17 @@ let userPanel=document.getElementById('userPanel');
 books.forEach((val)=>{
     console.log(val)
     BooksOfTheDay.innerHTML+= `
-    <div class="col-3 m-1 col-sm-12 ms-2 me-2 w3-hover-border-amber w3-hover-black card " id="" style="width:10%; height:500px;">
+    <div class="col-3 col-sm-12 ms-2 me-2 w3-hover-border-amber w3-hover-black card " id="" style="width:10%; height:550px;">
+    <div class="card-header " style="height:180px;"><h3 class="info ">${val.volumeInfo.title}</h3></div>
     <div class="card-body book">
-    <div class="card-text"><h3 class="info ">${val.volumeInfo.title}</h3></div>
-        <div class="card-img-top"><img src="${val.volumeInfo.imageLinks.thumbnail}" class="img-fluid" style="width:100%;" alt=""></div>
+        <div class="card-img-top "><img src="${val.volumeInfo.imageLinks.thumbnail}" class="img-fluid" style="width:100%;" alt=""></div>
     </div>
 </div>
     `
     noBels.innerHTML+= `
-    <div class="col-3 m-1 col-sm-12 ms-2 me-2 w3-hover-border-amber w3-hover-black card " id="" style="width:20%; height:500px;">
+    <div class="col-3  col-sm-12 ms-2 me-2 w3-hover-border-amber w3-hover-black card " id="" style="width:20%; height:550px;">
+    <div class="card-header" style="height:180px;"><h3 class="info ">${val.volumeInfo.title}</h3></div>
     <div class="card-body book">
-    <div class="card-text"><h3 class="info ">${val.volumeInfo.title}</h3></div>
         <div class="card-img-top"><img src="${val.volumeInfo.imageLinks.thumbnail}" class="img-fluid" style="width:100%;" alt=""></div>
     </div>
 </div>
