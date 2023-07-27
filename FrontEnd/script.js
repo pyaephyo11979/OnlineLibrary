@@ -4,8 +4,17 @@ let loginPage=document.querySelector('#page1');
 let signUpPage=document.querySelector('#page2');
 let createAccBtn=document.getElementById('createAccBtn');
 let loginAccBtn=document.getElementById('loginAccBtn');
-let BooksOfTheDay=document.getElementById('booksOfTheDay')
-let noBels=document.getElementById('Nobels')
+let BooksOfTheDay=document.getElementById('booksOfTheDay');
+let loginEmail=document.getElementById('email');
+let loginPassword=document.getElementById('psw');
+let singUpName=document.getElementById('name');
+let signUpEmail=document.getElementById('Email');
+let signUpPassword=document.getElementById('pSw1');
+let loginBtn=document.getElementById('loginbtn');
+let signUpBtn=document.getElementById('signUp');
+let signUpPasswordIdentity=document.getElementById('pSw2');
+let noBels=document.getElementById('Nobels');
+let userPanel=document.getElementById('userPanel');
 books.forEach((val)=>{
     console.log(val)
     BooksOfTheDay.innerHTML+= `
@@ -25,6 +34,33 @@ books.forEach((val)=>{
 </div>
     `
 })
+// let Users=[];
+// function User(name,email,password){
+//     let u=new Object();
+//     u.name=name;
+//     u.email=email;
+//     u.password=password;
+// }
+// signUpBtn.addEventListener('click',()=>{
+//     var name=singUpName.value;
+//     var em=signUpEmail.value;
+//     var psw=signUpPassword.value;
+//     var pswi=signUpPasswordIdentity;
+//     Users.push(User(name,em,psw));
+//     console.log(`${Users.forEach((user)=>{user.email;user.password;user.name})}`);
+    
+// })
+// loginBtn.addEventListener('click',()=>{
+//     var email=loginEmail.value;
+//     var password=loginPassword.value;
+//     Users.forEach((user)=>{
+//         if(email===user.email && password==user.password){
+            
+//         }else{
+
+//         }
+//     })
+// })
 signUpPage.style.display="none"
 createAccBtn.addEventListener('click',()=>{
     loginPage.style.display="none";
