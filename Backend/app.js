@@ -14,7 +14,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(file_upload());
 
-mongoose.connect("mongodb://localhost:27017/BookStore")
+mongoose.connect("mongodb+srv://zawlwinp223:zlp20022512@cluster1.qo5tbxm.mongodb.net/?retryWrites=true&w=majority")
 .then(()=>console.log("Conncected"))
 
 
