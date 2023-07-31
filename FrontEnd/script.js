@@ -34,33 +34,87 @@ books.forEach((val)=>{
 </div>
     `
 })
-// let Users=[];
-// function User(name,email,password){
-//     let u=new Object();
-//     u.name=name;
-//     u.email=email;
-//     u.password=password;
-// }
-// signUpBtn.addEventListener('click',()=>{
-//     var name=singUpName.value;
-//     var em=signUpEmail.value;
-//     var psw=signUpPassword.value;
-//     var pswi=signUpPasswordIdentity;
-//     Users.push(User(name,em,psw));
-//     console.log(`${Users.forEach((user)=>{user.email;user.password;user.name})}`);
-    
-// })
-// loginBtn.addEventListener('click',()=>{
-//     var email=loginEmail.value;
-//     var password=loginPassword.value;
-//     Users.forEach((user)=>{
-//         if(email===user.email && password==user.password){
-            
-//         }else{
+let Users=[];
+function User(name,email,password){
+    let u=new Object();
+    u.name=name;
+    u.email=email;
+    u.password=password;
+}
+function createAccount(){
+    var name=singUpName.value;
+    var em=signUpEmail.value;
+    var psw=signUpPassword.value;
+    var pswi=signUpPasswordIdentity;
+    userPanel.style.display='block';
+    signUpPage.style.displsy="none";
+    loginPage.style.display='none';
+    Users.push(User(name,em,psw));
+    Users.forEach((user)=>{
+        if(user.email === em){
+            userPanel.innerHTML=`
+            <div class="row">
+            <div class="navbar navbar-expand bg-body">
+                <div class="navbar-brand fs-3">User</div>
+                <div class="container">
+                    <div class="flex-fill"></div>
+                <div class="navbar-nav">
+                    <div class="nav-link"><a id="userSettingBtn" style="cursor:pointer;" class="nav-link"><i class="fas fa-gear"></i></a></div>
+                </div>
+                </div>
+            </div>
+        </div>
+        <div class="row container mt-2">
+            <div class="col-7 overflow-auto">
+                <p class="">Name:<span class="ms-3">${user.name}</span></p>
+                <p class="">Email:<span class="ms-3">${user.email}</span></p>
+            </div>
+            <div class="ms-5 col">
+                <div class="display-3 w3-text-amber"><i class="fas fa-user-circle"></i></div>
+            </div>
+        </div>
+            `
+        }
+    })
+}
+function login(){
+    var email=loginEmail.value;
+    var password=loginPassword.value;
+    Users.forEach((user)=>{
+        if(email===user.email && password==user.password){
+            userPanel.style.display='block';
+            signUpPage.style.displsy="none";
+            loginPage.style.display='none';
+            userPanel.innerHTML=`
+            <div class="row">
+            <div class="navbar navbar-expand bg-body">
+                <div class="navbar-brand fs-3">User</div>
+                <div class="container">
+                    <div class="flex-fill"></div>
+                <div class="navbar-nav">
+                    <div class="nav-link"><a id="userSettingBtn" style="cursor:pointer;" class="nav-link"><i class="fas fa-gear"></i></a></div>
+                </div>
+                </div>
+            </div>
+        </div>
+        <div class="row container mt-2">
+            <div class="col-7 overflow-auto">
+                <p class="">Name:<span class="ms-3">${user.name}</span></p>
+                <p class="">Email:<span class="ms-3">${user.email}</span></p>
+            </div>
+            <div class="ms-5 col">
+                <div class="display-3 w3-text-amber"><i class="fas fa-user-circle"></i></div>
+            </div>
+        </div>
+            `
+        }else{
 
-//         }
-//     })
-// })
+        }
+    })
+}
+userPanel.style.display='none'
+signUpBtn.addEventListener('click',()=>{createAccount()});
+loginBtn.addEventListener('click',()=>login())
 signUpPage.style.display="none"
 createAccBtn.addEventListener('click',()=>{
     loginPage.style.display="none";
@@ -84,3 +138,36 @@ themeChanger.addEventListener('click',()=>{
         container.removeAttribute('data-bs-theme');
     }
 })
+    $('.slick-carousel').slick({
+      dots: true,
+      arrows:true,
+      infinite: true,
+      speed: 300,
+      slidesToShow: 5,
+      slidesToScroll: 2,
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            infinite: true,
+            dots: true
+          }
+        },
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2
+          }
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+          }
+        }
+      ]
+      });
