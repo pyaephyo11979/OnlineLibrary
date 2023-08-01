@@ -171,6 +171,3 @@ themeChanger.addEventListener('click',()=>{
         }
       ]
       });
-      OpenApiBooks.forEach((book)=>{
-        console.log(book);
-      })
