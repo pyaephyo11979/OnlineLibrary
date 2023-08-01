@@ -1,7 +1,7 @@
 let container=document.querySelector('body');
 let themeChanger=document.getElementById('themeBtn');
-let loginPage=document.querySelector('#page1');
-let signUpPage=document.querySelector('#page2');
+let loginPage=document.getElementById('page1');
+let signUpPage=document.getElementById('page2');
 let createAccBtn=document.getElementById('createAccBtn');
 let loginAccBtn=document.getElementById('loginAccBtn');
 let BooksOfTheDay=document.getElementById('booksOfTheDay');
@@ -10,11 +10,12 @@ let loginPassword=document.getElementById('psw');
 let singUpName=document.getElementById('name');
 let signUpEmail=document.getElementById('Email');
 let signUpPassword=document.getElementById('pSw1');
-let loginBtn=document.getElementById('loginbtn');
+let linBtn=document.getElementById('loginbtn');
 let signUpBtn=document.getElementById('signUp');
 let signUpPasswordIdentity=document.getElementById('pSw2');
 let noBels=document.getElementById('Nobels');
 let userPanel=document.getElementById('userPanel');
+let lOutBtn=document.querySelector('#logOutBtn');
 books.forEach((val)=>{
     console.log(val)
     BooksOfTheDay.innerHTML+= `
@@ -34,87 +35,6 @@ books.forEach((val)=>{
 </div>
     `
 })
-let Users=[];
-function User(name,email,password){
-    let u=new Object();
-    u.name=name;
-    u.email=email;
-    u.password=password;
-}
-function createAccount(){
-    var name=singUpName.value;
-    var em=signUpEmail.value;
-    var psw=signUpPassword.value;
-    var pswi=signUpPasswordIdentity;
-    userPanel.style.display='block';
-    signUpPage.style.displsy="none";
-    loginPage.style.display='none';
-    Users.push(User(name,em,psw));
-    Users.forEach((user)=>{
-        if(user.email === em){
-            userPanel.innerHTML=`
-            <div class="row">
-            <div class="navbar navbar-expand bg-body">
-                <div class="navbar-brand fs-3">User</div>
-                <div class="container">
-                    <div class="flex-fill"></div>
-                <div class="navbar-nav">
-                    <div class="nav-link"><a id="userSettingBtn" style="cursor:pointer;" class="nav-link"><i class="fas fa-gear"></i></a></div>
-                </div>
-                </div>
-            </div>
-        </div>
-        <div class="row container mt-2">
-            <div class="col-7 overflow-auto">
-                <p class="">Name:<span class="ms-3">${user.name}</span></p>
-                <p class="">Email:<span class="ms-3">${user.email}</span></p>
-            </div>
-            <div class="ms-5 col">
-                <div class="display-3 w3-text-amber"><i class="fas fa-user-circle"></i></div>
-            </div>
-        </div>
-            `
-        }
-    })
-}
-function login(){
-    var email=loginEmail.value;
-    var password=loginPassword.value;
-    Users.forEach((user)=>{
-        if(email===user.email && password==user.password){
-            userPanel.style.display='block';
-            signUpPage.style.displsy="none";
-            loginPage.style.display='none';
-            userPanel.innerHTML=`
-            <div class="row">
-            <div class="navbar navbar-expand bg-body">
-                <div class="navbar-brand fs-3">User</div>
-                <div class="container">
-                    <div class="flex-fill"></div>
-                <div class="navbar-nav">
-                    <div class="nav-link"><a id="userSettingBtn" style="cursor:pointer;" class="nav-link"><i class="fas fa-gear"></i></a></div>
-                </div>
-                </div>
-            </div>
-        </div>
-        <div class="row container mt-2">
-            <div class="col-7 overflow-auto">
-                <p class="">Name:<span class="ms-3">${user.name}</span></p>
-                <p class="">Email:<span class="ms-3">${user.email}</span></p>
-            </div>
-            <div class="ms-5 col">
-                <div class="display-3 w3-text-amber"><i class="fas fa-user-circle"></i></div>
-            </div>
-        </div>
-            `
-        }else{
-
-        }
-    })
-}
-userPanel.style.display='none'
-signUpBtn.addEventListener('click',()=>{createAccount()});
-loginBtn.addEventListener('click',()=>login())
 signUpPage.style.display="none"
 createAccBtn.addEventListener('click',()=>{
     loginPage.style.display="none";
@@ -171,3 +91,92 @@ themeChanger.addEventListener('click',()=>{
         }
       ]
       });
+      let Users=[];
+      function User(name,email,password){
+          this.name=name;
+          this.email=email;
+          this.password=password;
+      }
+      function createAccount(){
+          var name=singUpName.value;
+          var em=signUpEmail.value;
+          var psw=signUpPassword.value;
+          var pswi=signUpPasswordIdentity.value;
+          Users.push(User(name,em,psw));
+          Users.forEach(()=>{
+              if(this.email === em && psw === pswi){
+                signUpPage.style.display="none";
+                loginPage.style.display='none';
+                  userPanel.innerHTML=`
+                  <div>
+                  <div class="row">
+                  <div class="navbar navbar-expand bg-body">
+                      <div class="navbar-brand fs-3">User</div>
+                      <div class="container">
+                          <div class="flex-fill"></div>
+                      <div class="navbar-nav">
+                          <div class="nav-link"><a id="userSettingBtn" style="cursor:pointer;" class="nav-link"><i class="fas fa-gear"></i></a></div>
+                          <div class="nav-link"><a id="logOutBtn" onclick="logOut()" style="cursor:pointer;" class="nav-link"><i class="fas fa-right-from-bracket"></i></a></div>
+                      </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="d-flex justify-content-around flex-row flex-wrap mt-2">
+                  <div class="">
+                      <p class="">Name:<span class="ms-3">${this.name}</span></p>
+                      <p class="">Email:<span class="ms-3">${this.email}</span></p>
+                  </div>
+                  <div class="">
+                      <div class="display-3 w3-text-amber"><i class="fas fa-user-circle"></i></div>
+                  </div>
+              </div>
+              </div>
+                  `
+                  userPanel.style.display='block';
+              }
+          })
+      }
+      function login(){
+          var email=loginEmail.value;
+          var password=loginPassword.value;
+          Users.forEach(()=>{
+              if(email===this.email && password==this.password){
+                  userPanel.style.display='block';
+                  signUpPage.style.displsy="none";
+                  loginPage.style.display='none';
+                  userPanel.innerHTML=`
+                  <div class="row">
+                  <div class="navbar navbar-expand bg-body">
+                      <div class="navbar-brand fs-3">User</div>
+                      <div class="container">
+                          <div class="flex-fill"></div>
+                      <div class="navbar-nav">
+                          <div class="nav-link"><a id="userSettingBtn" style="cursor:pointer;" class="nav-link"><i class="fas fa-gear"></i></a></div>
+                          <div class="nav-link"><a id="logOutBtn" onclick="logOut()" style="cursor:pointer;" class="nav-link"><i class="fas fa-right-from-bracket"></i></a></div>
+                      </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="row g-2 container mt-2">
+                  <div class="col-7 ">
+                      <p class="">Name:<span class="ms-3">${this.name}</span></p>
+                      <p class="">Email:<span class="ms-3">${this.email}</span></p>
+                  </div>
+                  <div class=" d-block col-5">
+                      <div class="display-3 w3-text-amber"><i class="fas fa-user-circle"></i></div>
+                  </div>
+              </div>
+                  `
+              }else{
+      
+              }
+          })
+      }
+function logOut(){
+    userPanel.style.display='none'
+    loginPage.style.display='block'
+}
+userPanel.style.display='none'
+signUpBtn.addEventListener('click',()=>{createAccount()});
+linBtn.addEventListener('click',()=>login());
+console.log(Users)
