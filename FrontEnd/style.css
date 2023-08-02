@@ -1,6 +1,11 @@
 .slick-prev::before{
-    color:gray;
+  content: grey url('font-awesome-6-pro/svgs/solid/circle-arrow-left.svg');
+  color:gray;
 }
 .slick-next::before {
-  color: gray;
+  content: rgb(108, 101, 101) url('font-awesome-6-pro/svgs/solid/circle-arrow-right.svg');
+  color:gray;
+}
+.book{
+  transition: all 0.3s;
 }
