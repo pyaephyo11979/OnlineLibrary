@@ -17,7 +17,6 @@ let noBels=document.getElementById('Nobels');
 let userPanel=document.getElementById('userPanel');
 let lOutBtn=document.querySelector('#logOutBtn');
 books.forEach((val)=>{
-    console.log(val)
     BooksOfTheDay.innerHTML+= `
     <div class="col-3 col-sm-12 book ms-2 me-2 w3-hover-border-amber w3-hover-black card " id="" style="width:10%; height:550px;">
     <div class="card-header " style="height:180px;"><h3 class="info ">${val.volumeInfo.title}</h3></div>
@@ -180,3 +179,4 @@ userPanel.style.display='none'
 signUpBtn.addEventListener('click',()=>{createAccount()});
 linBtn.addEventListener('click',()=>login());
 console.log(Users)
+// fetch('https://booklibraryapi.onrender.com/Author').then(res=>res.json()).then(json=>console.log(json));
