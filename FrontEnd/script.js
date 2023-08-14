@@ -16,7 +16,9 @@ let signUpPasswordIdentity=document.getElementById('pSw2');
 let noBels=document.getElementById('Nobels');
 let userPanel=document.getElementById('userPanel');
 let lOutBtn=document.querySelector('#logOutBtn');
-
+let searchedItem=document.getElementById('searchedItem');
+let searchedBtn=document.getElementById('searchBtn');
+let Catagorilizer=document.getElementById('Catagorilizer');
 // books.forEach((val)=>{
 //     BooksOfTheDay.innerHTML+= `
 //     <div class="col-3 col-sm-12 book ms-2 me-2 w3-hover-border-amber w3-hover-black card " id="" style="width:10%; height:550px;">
@@ -38,11 +40,26 @@ let lOutBtn=document.querySelector('#logOutBtn');
 
 Books.forEach((res)=>{
     BooksOfTheDay.innerHTML+= `
-    <div class=" col-sm-12 book m-2 w3-hover-border-amber w3-hover-black card " id="" style="width:20%; ">
+    <div data-aos="slide-up" data-aos-duration="3000" class=" col-12 col-lg-3 ${res.category.name} book m-1 w3-hover-border-amber w3-hover-black card " id="${res.name}" style="width:20%; ">
     <div class="card-header " style="height:100px;"><h3 class="info ">${res.name}</h3></div>
     <div class="card-body">
-        <div class="card-img-top "><img src="${res.image}" class="img-fluid" style="width:100%;" alt=""></div>
+        <div class="card-img-top "><img type="button" data-bs-toggle="modal" data-bs-target="#modal_${res._id}"  src="${res.image}" class="img-fluid" style="width:100%;" alt=""></div>
     </div>
+</div>
+<div class="modal" id="modal_${res._id}">
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3 class="modal-title">${res.name}</h3>
+            <button class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+        <img   src="${res.image}" class="img-fluid" style="width:100%;" alt="">
+        </div>
+        <div class="modal-footer">
+            <a class="btn btn-success" href="${res.pdf_url}">Download</a>
+    </div>
+</div>
 </div>
     `
 })
@@ -187,7 +204,25 @@ function logOut(){
     userPanel.style.display='none'
     loginPage.style.display='block'
 }
+function search(){
+    var search=searchedItem.value;
+    let found=false;
+    Books.forEach((book)=>{
+        let boks=document.getElementById(`${book.name}`);
+        boks.style.display='none';
+        if(search===book.name){
+            boks.style.display='block';
+            found=true;
+        }
+    })
+}
+searchedItem.addEventListener('keydown',(e)=>{
+    if(e.key==='Enter'){
+        search();
+    }
+});
+searchedBtn.addEventListener('click',()=>search());
 userPanel.style.display='none'
 signUpBtn.addEventListener('click',()=>{createAccount()});
 linBtn.addEventListener('click',()=>login());
-// fetch('https://booklibraryapi.onrender.com/Author').then(res=>res.json()).then(json=>console.log(json));
+AOS.init();
