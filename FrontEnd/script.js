@@ -39,8 +39,9 @@ let Catagorilizer=document.getElementById('Catagorilizer');
 // })
 
 Books.forEach((res)=>{
+    console.log(res.category.name)
     BooksOfTheDay.innerHTML+= `
-    <div data-aos="slide-up" data-aos-duration="3000" class=" col-12 col-lg-3 ${res.category.name} book m-1 w3-hover-border-amber w3-hover-black card " id="${res.name}" style="width:20%; ">
+    <div  class=" col-12 col-lg-3 ${res.category.name} book m-1 w3-hover-border-amber w3-hover-black card " id="${res.name}" style="width:20%; ">
     <div class="card-header " style="height:100px;"><h3 class="info ">${res.name}</h3></div>
     <div class="card-body">
         <div class="card-img-top "><img type="button" data-bs-toggle="modal" data-bs-target="#modal_${res._id}"  src="${res.image}" class="img-fluid" style="width:100%;" alt=""></div>
@@ -54,10 +55,11 @@ Books.forEach((res)=>{
             <button class="btn-close" data-bs-dismiss="modal"></button>
         </div>
         <div class="modal-body">
+        <span class="fs-5">WrittenBy: ${res.author.name}</span>
         <img   src="${res.image}" class="img-fluid" style="width:100%;" alt="">
         </div>
         <div class="modal-footer">
-            <a class="btn btn-success" href="${res.pdf_url}">Download <i class="fas fa-download"></i> </a>
+            <a class="btn btn-success" target="_blank" href="${res.pdf_url}">Download <i class="fas fa-download"></i> </a>
     </div>
 </div>
 </div>
@@ -210,7 +212,7 @@ function search(){
     Books.forEach((book)=>{
         let boks=document.getElementById(`${book.name}`);
         boks.style.display='none';
-        if(search===book.name){
+        if(search==book.name ||  search==book.author.name || search==book.category.name){
             boks.style.display='block';
             found=true;
         }
@@ -221,6 +223,85 @@ searchedItem.addEventListener('keydown',(e)=>{
         search();
     }
 });
+let nobelCagBtn=document.getElementById('nobelCagBtn');
+let bioCagBtn=document.getElementById('bioCagBtn');
+let nFcCagBtn=document.getElementById('nFcCagBtn');
+let FcCagBtn=document.getElementById('FcCagBtn');
+let rmCagBtn=document.getElementById('rmCagBtn');
+let genCagBtn=document.getElementById('genCagBtn');
+nobelCagBtn.addEventListener('click',()=>{
+    Books.forEach((book)=>{
+        let boks=document.querySelectorAll(`.${book.category.name}`);
+        boks.forEach((bok)=>{
+            bok.style.display='none';
+        })
+        if(book.category.name==='Novel'){
+            boks.forEach((bok)=>{
+                bok.style.display='block';
+            })
+        }
+    })
+})
+nFcCagBtn.addEventListener('click',()=>{
+    Books.forEach((book)=>{
+        let boks=document.querySelectorAll(`.${book.category.name}`);
+        boks.forEach((bok)=>{
+            bok.style.display='none';
+        })
+        if(book.category.name==='Non-Fiction'){
+            boks.forEach((bok)=>{
+                bok.style.display='block';
+            })
+        }
+    })
+})
+FcCagBtn.addEventListener('click',()=>{
+    Books.forEach((book)=>{
+        let boks=document.querySelectorAll(`.${book.category.name}`);
+        boks.forEach((bok)=>{
+            bok.style.display='none';
+        })
+        if(book.category.name==='Fiction'){
+            boks.forEach((bok)=>{
+                bok.style.display='block';
+            })
+        }
+    })
+})
+rmCagBtn.addEventListener('click',()=>{
+    Books.forEach((book)=>{
+        let boks=document.querySelectorAll(`.${book.category.name}`);
+        boks.forEach((bok)=>{
+            bok.style.display='none';
+        })
+        if(book.category.name==='Romance'){
+            boks.forEach((bok)=>{
+                bok.style.display='block';
+            })
+        }
+    })
+})
+bioCagBtn.addEventListener('click',()=>{
+        Books.forEach((book)=>{
+        let boks=document.querySelectorAll(`.${book.category.name}`);
+        boks.forEach((bok)=>{
+            bok.style.display='none';
+        })
+        if(book.category.name==='Biography'){
+            boks.forEach((bok)=>{
+                bok.style.display='block';
+            })
+        }
+    })
+})
+genCagBtn.addEventListener('click',()=>{
+        Books.forEach((book)=>{
+        let boks=document.querySelectorAll(`.${book.category.name}`);
+        boks.forEach((bok)=>{
+            bok.style.display='block';
+        })
+    })
+})
 searchedBtn.addEventListener('click',()=>search());
 userPanel.style.display='none'
 signUpBtn.addEventListener('click',()=>{createAccount()});
