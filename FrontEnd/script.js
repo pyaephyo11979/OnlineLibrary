@@ -57,7 +57,7 @@ Books.forEach((res)=>{
         <img   src="${res.image}" class="img-fluid" style="width:100%;" alt="">
         </div>
         <div class="modal-footer">
-            <a class="btn btn-success" href="${res.pdf_url}">Download</a>
+            <a class="btn btn-success" href="${res.pdf_url}">Download <i class="fas fa-download"></i> </a>
     </div>
 </div>
 </div>
