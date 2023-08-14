@@ -40,8 +40,8 @@ let searchedBtn=document.getElementById('searchBtn');
 Books.forEach((res)=>{
     console.log(res.category.name)
     BooksOfTheDay.innerHTML+= `
-    <div  class=" col-5 start-0 end-0 ${res.category.name} book m-1 w3-hover-border-amber w3-hover-black card " id="${res.name}" style="width:20%; ">
-    <div class="card-header " style="height:100px;"><h3 class="info ">${res.name}</h3></div>
+    <div  class="  ${res.category.name} book m-1 w3-hover-border-amber w3-hover-black card " id="${res.name}" style="width:15%; ">
+    <div class="card-header "><h3 class="info ">${res.name}</h3></div>
     <div class="card-body">
         <div class="card-img-top "><img type="button" data-bs-toggle="modal" data-bs-target="#modal_${res._id}"  src="${res.image}" class="img-fluid" style="width:100%;" alt=""></div>
     </div>
