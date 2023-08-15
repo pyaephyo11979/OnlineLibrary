@@ -38,7 +38,7 @@ let searchedBtn=document.getElementById('searchBtn');
 // })
 
 Books.forEach((res)=>{
-    console.log(res.category.name)
+    console.log(res.tag.name)
     BooksOfTheDay.innerHTML+= `
     <div  class="  ${res.category.name} book m-1 w3-hover-border-amber w3-hover-black card " id="${res.name}" style="width:15%; ">
     <div class="card-header "><h3 class="info ">${res.name}</h3></div>
@@ -54,7 +54,8 @@ Books.forEach((res)=>{
             <button class="btn-close" data-bs-dismiss="modal"></button>
         </div>
         <div class="modal-body">
-        <span class="fs-5">WrittenBy: ${res.author.name}</span>
+        <span class="fs-5 d-block">WrittenBy: ${res.author.name}</span>
+        <span class="fs-5 d-block">Category: ${res.category.name}</span>
         <img   src="${res.image}" class="img-fluid" style="width:100%;" alt="">
         </div>
         <div class="modal-footer">
@@ -299,6 +300,62 @@ genCagBtn.addEventListener('click',()=>{
         boks.forEach((bok)=>{
             bok.style.display='block';
         })
+    })
+})
+let trTagBtn=document.getElementById('trTagBtn');
+let ltTagBtn=document.getElementById('ltTagBtn');
+let pTagBtn=document.getElementById('pTagBtn');
+let bSTagBtn=document.getElementById('bSTagBtn');
+trTagBtn.addEventListener('click',()=>{
+    Books.forEach((book)=>{
+        let boks=document.querySelectorAll(`.${book.category.name}`);
+        boks.forEach((bok)=>{
+            bok.style.display='none';
+        })
+        if(book.tag.name==='Trend'){
+            boks.forEach((bok)=>{
+                bok.style.display='block';
+            })
+        }
+    })
+})
+ltTagBtn.addEventListener('click',()=>{
+    Books.forEach((book)=>{
+        let boks=document.querySelectorAll(`.${book.category.name}`);
+        boks.forEach((bok)=>{
+            bok.style.display='none';
+        })
+        if(book.tag.name==='Latest'){
+            boks.forEach((bok)=>{
+                bok.style.display='block';
+            })
+        }
+    })
+})
+pTagBtn.addEventListener('click',()=>{
+    Books.forEach((book)=>{
+        let boks=document.querySelectorAll(`.${book.category.name}`);
+        boks.forEach((bok)=>{
+            bok.style.display='none';
+        })
+        if(book.tag.name==='Popular'){
+            boks.forEach((bok)=>{
+                bok.style.display='block';
+            })
+        }
+    })
+})
+bSTagBtn.addEventListener('click',()=>{
+    Books.forEach((book)=>{
+        let boks=document.querySelectorAll(`.${book.category.name}`);
+        boks.forEach((bok)=>{
+            bok.style.display='none';
+        })
+        if(book.tag.name==='Top Selling'){
+            boks.forEach((bok)=>{
+                bok.style.display='block';
+            })
+        }
     })
 })
 searchedBtn.addEventListener('click',()=>search());
