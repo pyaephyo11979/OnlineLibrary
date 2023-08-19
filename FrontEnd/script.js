@@ -36,35 +36,66 @@ let searchedBtn=document.getElementById('searchBtn');
 // </div>
 //     `
 // })
-
-Books.forEach((res)=>{
-    console.log(res.tag.name)
-    BooksOfTheDay.innerHTML+= `
-    <div  class="  ${res.category.name} book m-1 w3-hover-border-amber w3-hover-black card " id="${res.name}" style="width:15%; ">
-    <div class="card-header "><h3 class="info ">${res.name}</h3></div>
-    <div class="card-body">
-        <div class="card-img-top "><img type="button" data-bs-toggle="modal" data-bs-target="#modal_${res._id}"  src="${res.image}" class="img-fluid" style="width:100%;" alt=""></div>
-    </div>
-</div>
-<div class="modal" id="modal_${res._id}">
-<div class="modal-dialog">
-    <div class="modal-content">
-        <div class="modal-header">
-            <h3 class="modal-title">${res.name}</h3>
-            <button class="btn-close" data-bs-dismiss="modal"></button>
+fetch('https://booklibraryapi.onrender.com/Book').then(res=>res.json()).then((data)=>{
+    console.log(data)
+    let book=data.results;
+    book.forEach((res)=>{
+            BooksOfTheDay.innerHTML+= `
+            <div  class="  ${res.category.name} book m-1 w3-hover-border-amber w3-hover-black card " id="${res.name}" style="width:15%; ">
+            <div class="card-header "><h3 class="info ">${res.name}</h3></div>
+            <div class="card-body">
+                <div class="card-img-top "><img type="button" data-bs-toggle="modal" data-bs-target="#modal_${res._id}"  src="${res.image}" class="img-fluid" style="width:100%;" alt=""></div>
+            </div>
         </div>
-        <div class="modal-body">
-        <span class="fs-5 d-block">WrittenBy: ${res.author.name}</span>
-        <span class="fs-5 d-block">Category: ${res.category.name}</span>
-        <img   src="${res.image}" class="img-fluid" style="width:100%;" alt="">
+        <div class="modal" id="modal_${res._id}">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title">${res.name}</h3>
+                    <button class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                <span class="fs-5 d-block">WrittenBy: ${res.author.name}</span>
+                <span class="fs-5 d-block">Category: ${res.category.name}</span>
+                <img   src="${res.image}" class="img-fluid" style="width:100%;" alt="">
+                </div>
+                <div class="modal-footer">
+                    <a class="btn btn-success" target="_blank" href="${res.pdf_url}">Download <i class="fas fa-download"></i> </a>
+            </div>
         </div>
-        <div class="modal-footer">
-            <a class="btn btn-success" target="_blank" href="${res.pdf_url}">Download <i class="fas fa-download"></i> </a>
-    </div>
-</div>
-</div>
-    `
+        </div>
+            `
+        })
 })
+
+// Books.forEach((res)=>{
+//     console.log(res.tag.name)
+//     BooksOfTheDay.innerHTML+= `
+//     <div  class="  ${res.category.name} book m-1 w3-hover-border-amber w3-hover-black card " id="${res.name}" style="width:15%; ">
+//     <div class="card-header "><h3 class="info ">${res.name}</h3></div>
+//     <div class="card-body">
+//         <div class="card-img-top "><img type="button" data-bs-toggle="modal" data-bs-target="#modal_${res._id}"  src="${res.image}" class="img-fluid" style="width:100%;" alt=""></div>
+//     </div>
+// </div>
+// <div class="modal" id="modal_${res._id}">
+// <div class="modal-dialog">
+//     <div class="modal-content">
+//         <div class="modal-header">
+//             <h3 class="modal-title">${res.name}</h3>
+//             <button class="btn-close" data-bs-dismiss="modal"></button>
+//         </div>
+//         <div class="modal-body">
+//         <span class="fs-5 d-block">WrittenBy: ${res.author.name}</span>
+//         <span class="fs-5 d-block">Category: ${res.category.name}</span>
+//         <img   src="${res.image}" class="img-fluid" style="width:100%;" alt="">
+//         </div>
+//         <div class="modal-footer">
+//             <a class="btn btn-success" target="_blank" href="${res.pdf_url}">Download <i class="fas fa-download"></i> </a>
+//     </div>
+// </div>
+// </div>
+//     `
+// })
 signUpPage.style.display="none"
 createAccBtn.addEventListener('click',()=>{
     loginPage.style.display="none";
